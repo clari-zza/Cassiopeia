@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <audio autoplay loop>
+    <source src="lobby.mp3" type="audio/mp3">  
+  </audio>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Welcome aboard SG's Virtual Tour Bus!</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="script.js"></script>
+  <link href="imposter/imposter.html"/>
+  <link href="quiz/quiz.html"/>
+  <link href="2_tourbus.html"/>
+  <link href="1_start.html"/
+  <link href="stationscreens/station1M.html"/>
+  <link href="stationscreens/station2GBB.html"/>
+  <link href="stationscreens/station3changi.html"/>
+    <title>Quiz</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 20px;
+        }
+        .clickable-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+  <img src="https://cloudfront-ap-southeast-2.images.arcpublishing.com/nzme/2456GMDQK7JYCU7BRTIEDKAGHE.jpg"
+    width =100%
+    height= auto>
+<body>
+  <audio autoplay>
+      <source src="../pictures/lobby.mp3" type="audio/mp3">
+  </audio>
+  
+    <div class="clickable-container" id="myContainer">
+        <p id="text">Meet the Merlion, Singapore's iconic symbol of strength and transformation.</p>
+    </div>
+  <a href="../quiz/quiz.html"><button>Play!</button></a>
+
+    <script>
+        // Function to change text in the container
+        function changeText() {
+            var textElement = document.getElementById('text');
+            var currentText = textElement.innerText;
+
+            // Example: Change text based on the current text
+            if (currentText === "Meet the Merlion, Singapore's iconic symbol of strength and transformation.") {
+                textElement.innerText = "The 6 statues around Singapore are mythical creatures that are part lion and part fish, which encapsulates the city's rich heritage.";
+            } else if (currentText === "The 6 statues around Singapore are mythical creatures that are part lion and part fish, which encapsulates the city's rich heritage." ) {
+                textElement.innerText = "Crafted in 1964, it is a powerful reminder of Singapore's resilience and evolution from a fishing village to a thriving metropolis.";
+            } else {
+                  textElement.innerText = "Meet the Merlion, Singapore's iconic symbol of strength and transformation.";
+            }
+        }
+
+        // Add click event listener to the container
+        document.getElementById('myContainer').addEventListener('click', changeText);
+    </script>
+</body>
+</html>

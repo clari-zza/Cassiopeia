@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Water the Flowers Game</title>
+   
+      <!DOCTYPE html>
+<html lang="en">
+  <audio autoplay loop>
+    <source src="lobby.mp3" type="audio/mp3">  
+  </audio>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Welcome aboard SG's Virtual Tour Bus!</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="script.js"></script>
+  <link href="imposter/imposter.html"/>
+  <link href="quiz/quiz.html"/>
+  <link href="2_tourbus.html"/>
+  <link href="1_start.html"/
+  <link href="stationscreens/station1M.html"/>
+  <link href="stationscreens/station2GBB.html"/>
+  <link href="stationscreens/station3changi.html"/>
+    <title>Change Text on Click</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 20px;
+        }
+        .clickable-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+
+
+  <body>
+    <audio autoplay>
+        <source src="pictures/lobby.mp3" type="audio/mp3">
+    </audio>
+    
+  <!-- Using width and height attributes -->
+  <img src="https://asianaviation.com/wp-content/uploads/Singapore-Changi-scaled.jpg" alt="Image" width="100%" height=auto>
+    
+<body>
+    <div class="clickable-container" id="myContainer">
+        <p id="text">Step into excellence at Changi Airport, a global aviation icon situated in Singapore. Consistently ranked as the world's best airport, Changi redefines travel with its state-of-the-art facilities, impeccable services, and an array of unique amenities.</p>
+
+      <a href="../imposter/imposter.html"><button>Play!</button></a>
+      
+    </div>
+
+    <script>
+        // Function to change text in the container
+        function changeText() {
+            var textElement = document.getElementById('text');
+            var currentText = textElement.innerText;
+
+            // Example: Change text based on the current text
+            if (currentText === "Step into excellence at Changi Airport, a global aviation icon situated in Singapore. Consistently ranked as the world's best airport, Changi redefines travel with its state-of-the-art facilities, impeccable services, and an array of unique amenities.") {
+                textElement.innerText = "From lush gardens and captivating art installations to diverse entertainment options, every aspect caters to your comfort.";
+            } else if (currentText === "From lush gardens and captivating art installations to diverse entertainment options, every aspect caters to your comfort." ) {
+                textElement.innerText = "Navigate through a seamless and world-class airport experience, reflecting Singapore's commitment to hospitality and innovation as you embark on your global journey. ";
+            } else {
+                textElement.innerText = "Step into excellence at Changi Airport, a global aviation icon situated in Singapore. Consistently ranked as the world's best airport, Changi redefines travel with its state-of-the-art facilities, impeccable services, and an array of unique amenities.";
+
+            }
+        }
+
+        // Add click event listener to the container
+        document.getElementById('myContainer').addEventListener('click', changeText);
+    </script>
+</body>
+</html>
+    

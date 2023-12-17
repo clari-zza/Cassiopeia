@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Welcome aboard SG's Virtual Tour Bus!</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="script.js"></script>
+  <link href="imposter/imposter.html"/>
+  <link href="quiz/quiz.html"/>
+  <link href="2_tourbus.html"/>
+  <link href="1_start.html"/
+  <link href="stationscreens/station1M.html"/>
+  <link href="stationscreens/station2GBB.html"/>
+  <link href="stationscreens/station3changi.html"/>
+    <title>Aesthetic Multiple Choice Questions</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #3498db, #2ecc71); /* Gradient background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .question-container {
+            display: flex;
+            justify-content: space-between;
+            width: 800px;
+        }
+
+        .question {
+            background-color: #3498db;
+            border-radius: 10px;
+            color: #fff;
+            padding: 20px;
+            margin-right: 20px;
+            width: calc(33.33% - 20px); /* Adjust the width as needed */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .question:hover {
+            transform: translateY(-5px);
+        }
+
+        .question p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .choices {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .choice {
+            margin-bottom: 10px;
+            padding: 15px;
+            background-color: #2980b9;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .choice:active {
+            background-color: #2c3e50; /* Darker color when pressed */
+        }
+
+        .choice:hover {
+            background-color: #3498db;
+            transform: scale(1.05);
+        }
+
+        .correctness-text {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #3498db;
+        }
+
+        #final-button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #final-button {
+            padding: 15px;
+            background-color: #2ecc71;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            display: none; /* Initially hidden */
+        }
+
+        #final-button:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+  <audio autoplay loop>
+      <source src="../pictures/quiz.mp3" type="audio/mp3">
+  </audio>
+  
+    <div class="question-container">
+        <div class="question" id="question1">
+            <p>Question 1: When was the Merlion constructed?</p>
+            <div class="choices">
+                <button class="choice" onclick="checkAnswer('question1', '1964')">1964</button>
+                <button class="choice" onclick="checkAnswer('question1', '1965')">1965</button>
+                <button class="choice" onclick="checkAnswer('question1', '1972')">1972</button>
+                <button class="choice" onclick="checkAnswer('question1', '1927')">1927</button>
+            </div>
+            <div class="correctness-text" id="correctness-text1"></div>
+        </div>
+
+        <div class="question" id="question2">
+            <p>Question 2: How many Merlions are there in Singapore?</p>
+            <div class="choices">
+                <button class="choice" onclick="checkAnswer('question2', 'One')">One</button>
+                <button class="choice" onclick="checkAnswer('question2', 'Three')">Three</button>
+                <button class="choice" onclick="checkAnswer('question2', 'Six')">Six</button>
+                <button class="choice" onclick="checkAnswer('question2', 'Eight')">Eight</button>
+            </div>
+            <div class="correctness-text" id="correctness-text2"></div>
+        </div>
+
+        <div class="question" id="question3">
+            <p>Question 3: What is the merlion made of?</p>
+            <div class="choices">
+                <button class="choice" onclick="checkAnswer('question3', 'Lion and Fish')">Lion and Fish</button>
+                <button class="choice" onclick="checkAnswer('question3', 'Dog and Cat')">Dog and Cat</button>
+                <button class="choice" onclick="checkAnswer('question3', 'Crocodile and Pig')">Crocodile and Pig</button>
+                <button class="choice" onclick="checkAnswer('question3', 'sphinx')">sphinx</button>
+            </div>
+            <div class="correctness-text" id="correctness-text3"></div>
+        </div>
+    </div>
+
+    <div id="final-button-container">
+        <button id="final-button" onclick="showFinalMessage()">Congratulations! Proceed to Next Screen</button>
+
+    </div>
+
+  
+  
+    <script>
+        var audio = document.getElementById("myWrong");
+        var audio = document.getElementById("myCorrect");
+        function checkAnswer(questionId, selectedAnswer) {
+            var correctAnswer;
+            var correctnessTextId;
+
+            switch (questionId) {
+                case 'question1':
+                    correctAnswer = '1964';
+                    correctnessTextId = 'correctness-text1';
+                    break;
+                case 'question2':
+                    correctAnswer = 'Six';
+                    correctnessTextId = 'correctness-text2';
+                    break;
+                case 'question3':
+                    correctAnswer = 'Lion and Fish';
+                    correctnessTextId = 'correctness-text3';
+                    break;
+            }
+
+            var correctnessText = document.getElementById(correctnessTextId);
+
+            if (selectedAnswer === correctAnswer) {
+                correctnessText.textContent = 'Correct! 🌟';
+                correctnessText.style.color = '#2ecc71'; 
+              // Green color for correct answer
+             
+            } else {
+                correctnessText.textContent = 'Incorrect. The correct answer is ' + correctAnswer + '.';
+                correctnessText.style.color = '#e74c3c';
+            }
+
+            checkFinalButtonVisibility(); // Check if all questions are answered correctly
+        }
+
+        function checkFinalButtonVisibility() {
+            var correctnessText1 = document.getElementById('correctness-text1').textContent;
+            var correctnessText2 = document.getElementById('correctness-text2').textContent;
+            var correctnessText3 = document.getElementById('correctness-text3').textContent;
+
+            // If all questions are answered correctly, show the final button
+            if (correctnessText1.includes('Correct') && correctnessText2.includes('Correct') && correctnessText3.includes('Correct')) {
+                document.getElementById('final-button').style.display = 'block';
+            }
+        }
+
+        function showFinalMessage() {
+            window.location.href = '../2_tourbus.html';
+            // Add any additional logic or navigation here
+        }
+
+    </script>
+
+</body>

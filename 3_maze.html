@@ -1,0 +1,60 @@
+<style>
+  body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      height: 100vh;
+      background: #e0f7fa; /* Light blue background color */
+  }
+
+  .flower {
+      width: 100px;
+      height: 150px;
+      cursor: pointer;
+      margin-bottom: 20px;
+  }
+
+  #message {
+      font-size: 20px;
+  }
+  
+</style>
+</head>
+<body>
+
+  <audio autoplay loop>
+      <source src="pictures/quiz.mp3" type="audio/mp3">
+  </audio>
+  
+<img class="flower" src="https://media.istockphoto.com/id/488874182/photo/dry-rose.jpg?s=612x612&w=0&k=20&c=sVp2SBExazHkJWvGEQO1-E-vEmz-W-dQLPuyBfiq60o=" alt="Flower 1" onclick="waterFlower(1)">
+<img class="flower" src="https://media.istockphoto.com/id/488874182/photo/dry-rose.jpg?s=612x612&w=0&k=20&c=sVp2SBExazHkJWvGEQO1-E-vEmz-W-dQLPuyBfiq60o=" alt="Flower 2" onclick="waterFlower(2)">
+<img class="flower" src="https://media.istockphoto.com/id/488874182/photo/dry-rose.jpg?s=612x612&w=0&k=20&c=sVp2SBExazHkJWvGEQO1-E-vEmz-W-dQLPuyBfiq60o=" alt="Flower 3" onclick="waterFlower(3)">
+<img class="flower" src="https://media.istockphoto.com/id/488874182/photo/dry-rose.jpg?s=612x612&w=0&k=20&c=sVp2SBExazHkJWvGEQO1-E-vEmz-W-dQLPuyBfiq60o=" alt="Flower 4" onclick="waterFlower(4)">
+<img class="flower" src="https://media.istockphoto.com/id/488874182/photo/dry-rose.jpg?s=612x612&w=0&k=20&c=sVp2SBExazHkJWvGEQO1-E-vEmz-W-dQLPuyBfiq60o=" alt="Flower 5" onclick="waterFlower(5)">
+<div id="message"></div>
+  
+
+<script>
+  let flowersWatered = [false, false, false, false, false];
+
+  function waterFlower(index) {
+      if (!flowersWatered[index - 1]) {
+          // Change the image of the clicked flower to a watered flower
+          document.getElementsByClassName('flower')[index - 1].src = 'https://img.freepik.com/free-photo/rose-flower-white-isolated_2829-14266.jpg';
+          flowersWatered[index - 1] = true;
+
+          // Check if all flowers are watered
+          if (flowersWatered.every(watered => watered)) {
+              document.getElementById('message').textContent = 'Congratulations! You watered all the flowers and won!';
+               window.location.href = '../2_tourbus.html';
+          }
+      }
+  }
+</script>
+  
+</body>
+</html>

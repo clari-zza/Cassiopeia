@@ -1,0 +1,22 @@
+
+
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+
+.screen {
+    display: none;  /* Hide all screens by default */
+}
+
+.active {
+    display: block;  /* Show the active screen */
+}
+

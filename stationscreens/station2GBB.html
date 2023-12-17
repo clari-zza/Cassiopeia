@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+    <html lang="en">
+      <audio autoplay loop>
+        <source src="lobby.mp3" type="audio/mp3">  
+      </audio>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <title>Welcome aboard SG's Virtual Tour Bus!</title>
+      <link href="style.css" rel="stylesheet" type="text/css" />
+      <script src="script.js"></script>
+      <link href="imposter/imposter.html"/>
+      <link href="quiz/quiz.html"/>
+      <link href="2_tourbus.html"/>
+      <link href="1_start.html"/
+      <link href="stationscreens/station1M.html"/>
+      <link href="stationscreens/station2GBB.html"/>
+      <link href="stationscreens/station3changi.html"/>
+        <title>Gardens by the Bay</title>
+        <style>
+            body {
+                text-align: center;
+                margin: 20px;
+            }
+            .clickable-container {
+                border: 1px solid #ccc;
+                padding: 20px;
+                margin: 10px;
+                cursor: pointer;
+            }
+
+        </style>
+
+
+
+
+
+    </head>
+
+
+      <img src="https://www.gardensbythebay.com.sg/en/about-us/our-gardens-story/our-history/_jcr_content/root/container/container/container/image.coreimg.jpeg/1622655084280/thegardens-introduction-01-1670x940.jpeg"
+        width =100%
+        height= auto>
+    <body>
+      <audio autoplay>
+          <source src="../pictures/lobby.mp3" type="audio/mp3">
+      </audio>
+
+        <div class="clickable-container" id="myContainer">
+            <p id="text">Welcome to the awe-inspiring Gardens by the Bay, a horticultural marvel nestled in the heart of Singapore. Spanning 101 hectares, this urban oasis seamlessly blends nature and technology.</p>
+          <a href="../3_maze.html"><button>Play!</button></a>
+
+        </div>
+
+        <script>
+            // Function to change text in the container
+            function changeText() {
+                var textElement = document.getElementById('text');
+                var currentText = textElement.innerText;
+
+                // Example: Change text based on the current text
+                if (currentText === "Welcome to the awe-inspiring Gardens by the Bay, a horticultural marvel nestled in the heart of Singapore. Spanning 101 hectares, this urban oasis seamlessly blends nature and technology.") {
+                    textElement.innerText = "Marvel at the iconic Supertrees, vertical gardens that illuminate the skyline, and explore the Flower Dome and Cloud Forest, two breathtaking conservatories housing diverse plant life.";
+                } else if (currentText === "Marvel at the iconic Supertrees, vertical gardens that illuminate the skyline, and explore the Flower Dome and Cloud Forest, two breathtaking conservatories housing diverse plant life." ) {
+                    textElement.innerText = "Gardens by the Bay underscores Singapore's dedication to environmental sustainability, providing a serene escape in the midst of city life.";
+                } else {
+                    textElement.innerText = "Welcome to the awe-inspiring Gardens by the Bay, a horticultural marvel nestled in the heart of Singapore. Spanning 101 hectares, this urban oasis seamlessly blends nature and technology.";
+
+
+                }
+            }
+            document.getElementById('myContainer').addEventListener('click', changeText);
+        </script>
+
+
+    </body>
+    </html>
